@@ -5,7 +5,7 @@ import org.apache.camel.Header;
 public class TypeChecker {
 
     public static boolean isWidget(@Header("type") String type) {
-        return type.equals("widget");
+        return type.equalsIgnoreCase("widget");
     }
 
 }

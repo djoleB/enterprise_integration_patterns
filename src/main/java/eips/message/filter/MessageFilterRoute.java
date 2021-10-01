@@ -14,7 +14,7 @@ public class MessageFilterRoute extends RouteBuilder {
 
         from("direct:filterWithBean")
                 .filter().method(TypeChecker.class, "isWidget")
-                .to("mock:widget")
+                    .to("mock:widget")
                 .end();
     }
 
