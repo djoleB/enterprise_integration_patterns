@@ -1,6 +1,5 @@
 package eips.message.splitter;
 
-import eips.message.filter.MessageFilterRoute;
 import org.apache.camel.Exchange;
 import org.apache.camel.RoutesBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
@@ -19,12 +18,12 @@ public class MessageSplitRouteTest extends CamelTestSupport {
     }
 
     @Test
-    public void testFilterRoute_givenWidget() throws Exception {
+    public void testSplitter() throws Exception {
         MockEndpoint mockEndpoint = getMockEndpoint("mock:split");
-        mockEndpoint.expectedMessageCount(8);
+        mockEndpoint.expectedMessageCount(10);
 
         Exchange exchange = new DefaultExchange(new DefaultCamelContext());
-        exchange.getMessage().setBody(List.of("1,2,3,4,5,6,7,8"));
+        exchange.getMessage().setBody(List.of("1,2,3,4,5,6,7,8,9,10"));
 
         template.send("direct:splitterExample", exchange);
 

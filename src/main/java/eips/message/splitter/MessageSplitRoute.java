@@ -17,6 +17,5 @@ public class MessageSplitRoute extends RouteBuilder {
                     .to("mock:split")
                 .end();
 
-
     }
 }
