@@ -1,4 +1,4 @@
-package eips;
+package eips.message.filter;
 
 import eips.message.filter.MessageFilterRoute;
 import org.apache.camel.Exchange;
